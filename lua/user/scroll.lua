@@ -1,0 +1,2 @@
+-- neoscroll
+require("neoscroll").setup()
