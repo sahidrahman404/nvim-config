@@ -120,6 +120,7 @@ return packer.startup(function(use)
 	use("ggandor/lightspeed.nvim")
   use("windwp/nvim-ts-autotag")
 	use("karb94/neoscroll.nvim")
+  use("wellle/targets.vim")
 
 	-- Autosave
 	use("Pocco81/AutoSave.nvim")
