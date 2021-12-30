@@ -143,6 +143,7 @@ return packer.startup(function(use)
     clean_command_line_interval = 0,
     debounce_delay = 135,
   }
+  use "lambdalisue/suda.vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
