@@ -59,12 +59,12 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "vimwiki/vimwiki"
-  use 'junegunn/vim-slash'
+  use "junegunn/vim-slash"
 
   -- Colorschemes
-	use("folke/tokyonight.nvim")
- use "marko-cerovac/material.nvim"
-  use 'shaunsingh/solarized.nvim'
+  use "folke/tokyonight.nvim"
+  use "marko-cerovac/material.nvim"
+  use "shaunsingh/solarized.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -74,7 +74,6 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   --use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -99,51 +98,51 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-	use("tpope/vim-fugitive")
+  use "tpope/vim-fugitive"
 
-	-- Colorizer
-	use("norcalli/nvim-colorizer.lua")
-	use("amadeus/vim-convert-color-to")
+  -- Colorizer
+  use "norcalli/nvim-colorizer.lua"
+  use "amadeus/vim-convert-color-to"
 
-	-- Diagnostic
-	use({
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
-		end,
-	})
+  -- Diagnostic
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
+  }
 
-	-- Movement
-	use("tpope/vim-surround")
-	use("ggandor/lightspeed.nvim")
-  use("windwp/nvim-ts-autotag")
-	use("karb94/neoscroll.nvim")
-  use("wellle/targets.vim")
+  -- Movement
+  use "tpope/vim-surround"
+  use "ggandor/lightspeed.nvim"
+  use "windwp/nvim-ts-autotag"
+  use "karb94/neoscroll.nvim"
+  use "wellle/targets.vim"
 
-	-- Autosave
-	use("Pocco81/AutoSave.nvim")
-local autosave = require("autosave")
+  -- Autosave
+  use "Pocco81/AutoSave.nvim"
+  local autosave = require "autosave"
 
-autosave.setup({
-	enabled = true,
-	execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-	events = { "InsertLeave", "TextChanged" },
-	conditions = {
-		exists = true,
-		filename_is_not = {},
-		filetype_is_not = {},
-		modifiable = true,
-	},
-	write_all_buffers = false,
-	on_off_commands = true,
-	clean_command_line_interval = 0,
-	debounce_delay = 135,
-})
+  autosave.setup {
+    enabled = true,
+    execution_message = "AutoSave: saved at " .. vim.fn.strftime "%H:%M:%S",
+    events = { "InsertLeave", "TextChanged" },
+    conditions = {
+      exists = true,
+      filename_is_not = {},
+      filetype_is_not = {},
+      modifiable = true,
+    },
+    write_all_buffers = false,
+    on_off_commands = true,
+    clean_command_line_interval = 0,
+    debounce_delay = 135,
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
