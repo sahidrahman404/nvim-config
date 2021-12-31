@@ -23,3 +23,4 @@ require "user.plug-colorizer"
 --require("user.tabnine")
 require "user.scroll"
 require "user.autotag"
+require "user.transparent-nvim"

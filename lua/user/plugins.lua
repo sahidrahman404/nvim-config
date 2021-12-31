@@ -65,6 +65,8 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "marko-cerovac/material.nvim"
   use "shaunsingh/solarized.nvim"
+  use "sainnhe/gruvbox-material"
+  use "xiyaowong/nvim-transparent"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
