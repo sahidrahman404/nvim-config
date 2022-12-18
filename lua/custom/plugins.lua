@@ -41,4 +41,8 @@ return function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	use({ "windwp/nvim-ts-autotag" })
+
+	use({
+		"ahmedkhalf/project.nvim",
+	})
 end
