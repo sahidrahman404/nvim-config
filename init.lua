@@ -1,9 +1,12 @@
 -- Install packer
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = vim.fn.stdpath("data")
+	.. "/site/pack/packer/start/packer.nvim"
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	is_bootstrap = true
-	vim.fn.execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+	vim.fn.execute(
+		"!git clone https://github.com/wbthomason/packer.nvim " .. install_path
+	)
 	vim.cmd([[packadd packer.nvim]])
 end
 
@@ -25,13 +28,19 @@ require("packer").startup(function(use)
 
 	use({ -- Autocompletion
 		"hrsh7th/nvim-cmp",
-		requires = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
 	})
 
 	use({ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
-			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+			pcall(
+				require("nvim-treesitter.install").update({ with_sync = true })
+			)
 		end,
 	})
 
@@ -52,10 +61,18 @@ require("packer").startup(function(use)
 	use("tpope/vim-sleuth") -- Detect tabstop and shiftwidth automatically
 
 	-- Fuzzy Finder (files, lsp, etc)
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } })
+	use({
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 
 	-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "make",
+		cond = vim.fn.executable("make") == 1,
+	})
 
 	-- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
 	local has_plugins, plugins = pcall(require, "custom.plugins")
@@ -134,12 +151,23 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Remap for dealing with word wrap
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set(
+	"n",
+	"k",
+	"v:count == 0 ? 'gk' : 'k'",
+	{ expr = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"j",
+	"v:count == 0 ? 'gj' : 'j'",
+	{ expr = true, silent = true }
+)
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local highlight_group =
+	vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
@@ -198,27 +226,73 @@ require("telescope").setup({
 pcall(require("telescope").load_extension, "fzf")
 
 -- See `:help telescope.builtin`
-vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+vim.keymap.set(
+	"n",
+	"<leader>?",
+	require("telescope.builtin").oldfiles,
+	{ desc = "[?] Find recently opened files" }
+)
+vim.keymap.set(
+	"n",
+	"<leader><space>",
+	require("telescope.builtin").buffers,
+	{ desc = "[ ] Find existing buffers" }
+)
 vim.keymap.set("n", "<leader>/", function()
 	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 10,
-		previewer = false,
-	}))
+	require("telescope.builtin").current_buffer_fuzzy_find(
+		require("telescope.themes").get_dropdown({
+			winblend = 10,
+			previewer = false,
+		})
+	)
 end, { desc = "[/] Fuzzily search in current buffer]" })
 
-vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
+vim.keymap.set(
+	"n",
+	"<leader>sf",
+	require("telescope.builtin").find_files,
+	{ desc = "[S]earch [F]iles" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sh",
+	require("telescope.builtin").help_tags,
+	{ desc = "[S]earch [H]elp" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sw",
+	require("telescope.builtin").grep_string,
+	{ desc = "[S]earch current [W]ord" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sg",
+	require("telescope.builtin").live_grep,
+	{ desc = "[S]earch by [G]rep" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sd",
+	require("telescope.builtin").diagnostics,
+	{ desc = "[S]earch [D]iagnostics" }
+)
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require("nvim-treesitter.configs").setup({
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { "c", "cpp", "go", "lua", "python", "rust", "typescript", "help" },
+	ensure_installed = {
+		"c",
+		"cpp",
+		"go",
+		"lua",
+		"python",
+		"rust",
+		"typescript",
+		"help",
+	},
 
 	highlight = { enable = true },
 	indent = { enable = true },
@@ -304,11 +378,23 @@ local on_attach = function(_, bufnr)
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
 	nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+	nmap(
+		"gr",
+		require("telescope.builtin").lsp_references,
+		"[G]oto [R]eferences"
+	)
 	nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
 	nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-	nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-	nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+	nmap(
+		"<leader>ds",
+		require("telescope.builtin").lsp_document_symbols,
+		"[D]ocument [S]ymbols"
+	)
+	nmap(
+		"<leader>ws",
+		require("telescope.builtin").lsp_dynamic_workspace_symbols,
+		"[W]orkspace [S]ymbols"
+	)
 
 	-- See `:help K` for why this keymap
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
@@ -316,8 +402,16 @@ local on_attach = function(_, bufnr)
 
 	-- Lesser used LSP functionality
 	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-	nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
-	nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+	nmap(
+		"<leader>wa",
+		vim.lsp.buf.add_workspace_folder,
+		"[W]orkspace [A]dd Folder"
+	)
+	nmap(
+		"<leader>wr",
+		vim.lsp.buf.remove_workspace_folder,
+		"[W]orkspace [R]emove Folder"
+	)
 	nmap("<leader>wl", function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
@@ -337,7 +431,8 @@ require("mason").setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { "clangd", "rust_analyzer", "pyright", "tsserver", "sumneko_lua", "gopls" }
+local servers =
+	{ "clangd", "rust_analyzer", "pyright", "tsserver", "sumneko_lua", "gopls" }
 
 -- Ensure the servers above are installed
 require("mason-lspconfig").setup({

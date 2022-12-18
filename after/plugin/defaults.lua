@@ -1,17 +1,26 @@
-local builtin = require "telescope.builtin"
+local builtin = require("telescope.builtin")
 vim.opt.relativenumber = true
 
 -- save file
-vim.keymap.set("n", "<leader>w", vim.cmd.update, { desc = "[w]save" })
+vim.keymap.set("n", "<leader>w", vim.cmd.update, { desc = "[w]rite a file" })
 
 -- Better netrw navigation
 -- vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "[P]roject [E]xplorer" })
 
 -- find file in a git repo
-vim.keymap.set("n", "<leader>pg", builtin.git_files,
-    { desc = "[P]roject [G]it" })
+vim.keymap.set(
+	"n",
+	"<leader>pg",
+	builtin.git_files,
+	{ desc = "[P]roject [G]it" }
+)
 
-vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
+vim.keymap.set(
+	"n",
+	"<leader>sr",
+	require("telescope.builtin").resume,
+	{ desc = "[S]earch [R]esume" }
+)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -42,7 +51,11 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set(
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
+)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.opt.nu = true
@@ -58,12 +71,12 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append "@-@"
+vim.opt.isfname:append("@-@")
 
 vim.opt.colorcolumn = "80"
 vim.opt.incsearch = true
