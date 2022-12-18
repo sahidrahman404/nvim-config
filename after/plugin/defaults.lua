@@ -5,10 +5,11 @@ vim.opt.relativenumber = true
 vim.keymap.set("n", "<leader>w", vim.cmd.update, { desc = "[w]save" })
 
 -- Better netrw navigation
-vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "[P]roject [E]xplorer" })
+-- vim.keymap.set("n", "<leader>pe", vim.cmd.Ex, { desc = "[P]roject [E]xplorer" })
 
 -- find file in a git repo
-vim.keymap.set("n", "<leader>pg", builtin.git_files, { desc = "[P]roject [G]it" })
+vim.keymap.set("n", "<leader>pg", builtin.git_files,
+    { desc = "[P]roject [G]it" })
 
 vim.keymap.set("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
 
@@ -57,12 +58,12 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.isfname:append "@-@"
 
 vim.opt.colorcolumn = "80"
 vim.opt.incsearch = true
