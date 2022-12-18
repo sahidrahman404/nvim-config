@@ -39,4 +39,6 @@ return function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
+
+  use { "JoosepAlviste/nvim-ts-context-commentstring" }
 end
