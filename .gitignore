@@ -1,2 +1,2 @@
-./plugin
-/.luarc.json
+/plugin/
+/lua/.luarc.json
