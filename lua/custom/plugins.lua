@@ -34,4 +34,9 @@ return function(use)
       "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
   }
+
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 end
