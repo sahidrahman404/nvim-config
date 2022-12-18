@@ -8,7 +8,7 @@ return function(use)
     requires = { "nvim-lua/plenary.nvim" },
   }
 
-  use { "lukas-reineke/lsp-format.nvim" }
+  -- use { "lukas-reineke/lsp-format.nvim" }
 
   use { "ggandor/lightspeed.nvim" }
 
