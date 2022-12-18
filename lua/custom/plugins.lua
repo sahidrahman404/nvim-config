@@ -8,8 +8,6 @@ return function(use)
     requires = { "nvim-lua/plenary.nvim" },
   }
 
-  -- use { "lukas-reineke/lsp-format.nvim" }
-
   use { "ggandor/lightspeed.nvim" }
 
   use { "ThePrimeagen/harpoon" }
@@ -41,4 +39,6 @@ return function(use)
   }
 
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
+
+  use { "windwp/nvim-ts-autotag" }
 end
