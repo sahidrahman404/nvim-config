@@ -1,4 +1,8 @@
 local Terminal = require("toggleterm.terminal").Terminal
+
+local highlights = require("rose-pine.plugins.toggleterm")
+require("toggleterm").setup({ highlights = highlights })
+
 local lazygit = Terminal:new({
 	cmd = "lazygit",
 	dir = "git_dir",

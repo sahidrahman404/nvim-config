@@ -45,4 +45,6 @@ return function(use)
 	use({
 		"ahmedkhalf/project.nvim",
 	})
+
+	use({ "nvim-treesitter/nvim-treesitter-context" })
 end

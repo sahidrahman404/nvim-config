@@ -80,8 +80,3 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.colorcolumn = "80"
 vim.opt.incsearch = true
-
--- set Telescope CWD to opened directory
-if vim.fn.isdirectory(vim.v.argv[2]) == 1 then
-	vim.api.nvim_set_current_dir(vim.v.argv[2])
-end
