@@ -47,4 +47,6 @@ return function(use)
 	})
 
 	use({ "nvim-treesitter/nvim-treesitter-context" })
+
+	use({ "ThePrimeagen/git-worktree.nvim" })
 end
