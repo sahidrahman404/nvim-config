@@ -80,3 +80,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.colorcolumn = "80"
 vim.opt.incsearch = true
+
+-- toggle background
+vim.keymap.set(
+	"n",
+	"<leader>l",
+	':exec &bg=="light"? "set bg=dark" : "set bg=light"<CR>'
+)
