@@ -19,6 +19,8 @@ null_ls.setup({
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.prettier,
 		null_ls.builtins.completion.spell,
+		null_ls.builtins.formatting.sql_formatter,
+		null_ls.builtins.code_actions.eslint,
 	},
 	-- add to your shared on_attach callback
 	on_attach = function(client, bufnr)
