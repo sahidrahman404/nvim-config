@@ -61,3 +61,8 @@ require("lspconfig").sumneko_lua.setup({
 		},
 	},
 })
+
+--elixir
+require("lspconfig").elixirls.setup({
+	cmd = { "/home/rahman/.local/share/nvim/mason/bin/elixir-ls" },
+})

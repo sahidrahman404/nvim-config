@@ -84,4 +84,5 @@ return {
 
 	"nvim-treesitter/nvim-treesitter-context",
 	"ThePrimeagen/git-worktree.nvim",
+	"rafamadriz/friendly-snippets",
 }
