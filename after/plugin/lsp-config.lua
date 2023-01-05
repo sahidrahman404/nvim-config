@@ -1,7 +1,19 @@
 local nvim_lsp = require("lspconfig")
 
 --emmet
-nvim_lsp.emmet_ls.setup({})
+nvim_lsp.emmet_ls.setup({
+	filetypes = {
+		"html",
+		"typescriptreact",
+		"javascriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"eruby",
+		"heex",
+	},
+})
 
 --json
 --Enable (broadcasting) snippet capability for completion
