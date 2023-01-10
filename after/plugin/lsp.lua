@@ -15,7 +15,8 @@ local servers = {
 	"yamlls",
 	"taplo",
 	"dockerls",
-	"emmetls",
+	"emmet_ls",
+	"elixirls",
 }
 
 -- Ensure the servers above are installed
