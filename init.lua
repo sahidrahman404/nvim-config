@@ -20,9 +20,5 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
--- Example custom configuration for lua
---
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+require("config.keymaps")
+require("config.options")

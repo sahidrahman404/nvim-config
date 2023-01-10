@@ -44,6 +44,13 @@ vim.keymap.set("n", "<leader>w", vim.cmd.update, { desc = "[w]rite a file" })
 -- find file in a git repo
 vim.keymap.set(
 	"n",
+	"<leader>pg",
+	builtin.git_files,
+	{ desc = "[P]roject [G]it" }
+)
+-- find file in a git repo
+vim.keymap.set(
+	"n",
 	"<leader>sr",
 	require("telescope.builtin").resume,
 	{ desc = "[S]earch [R]esume" }
