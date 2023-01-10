@@ -38,3 +38,9 @@ vim.keymap.set(
 	vim.cmd.NvimTreeToggle,
 	{ desc = "[P]roject explorer [T]oggle" }
 )
+vim.keymap.set(
+	"n",
+	"<leader>pf",
+	vim.cmd.NvimTreeFindFile,
+	{ desc = "[P]roject explorer [F]ind file" }
+)
