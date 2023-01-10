@@ -12,6 +12,8 @@ nvim_lsp.emmet_ls.setup({
 		"less",
 		"eruby",
 		"heex",
+		"eex",
+		"elixir",
 	},
 })
 
