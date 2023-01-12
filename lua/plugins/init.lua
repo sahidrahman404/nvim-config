@@ -1,4 +1,31 @@
 return {
+	{
+		-- LSP Configuration & Plugins
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			-- Automatically install LSPs to stdpath for neovim
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+
+			-- Useful status updates for LSP
+			"j-hui/fidget.nvim",
+		},
+	},
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			-- Turn on lsp status information
+			require("fidget").setup()
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			-- Setup mason so it can manage external tooling
+			require("mason").setup()
+		end,
+	},
+	"williamboman/mason-lspconfig.nvim",
 	{ -- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter",
