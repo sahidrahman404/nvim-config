@@ -135,6 +135,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 require("lspconfig").sumneko_lua.setup({
+	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -155,6 +156,7 @@ require("lspconfig").sumneko_lua.setup({
 
 --elixir
 require("lspconfig").elixirls.setup({
+	on_attach = on_attach,
 	cmd = { "/home/rahman/.local/share/nvim/mason/bin/elixir-ls" },
 	capabilities = capabilities,
 })
