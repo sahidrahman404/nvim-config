@@ -39,4 +39,10 @@ return {
 	"ggandor/lightspeed.nvim",
 	"nvim-treesitter/nvim-treesitter-context",
 	"rafamadriz/friendly-snippets",
+	{
+		"kdheepak/lazygit.nvim",
+		keys = {
+			{ "<leader>gg", "<cmd>LazyGit<CR>", { desc = "open lazy git" } },
+		},
+	},
 }
