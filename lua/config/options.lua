@@ -53,7 +53,3 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.colorcolumn = "80"
 vim.opt.incsearch = true
-
-require("luasnip.loaders.from_vscode").lazy_load({
-	paths = { "./lua_snip" },
-})

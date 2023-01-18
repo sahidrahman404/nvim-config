@@ -29,7 +29,6 @@ local servers = {
 	"clangd",
 	"rust_analyzer",
 	"pyright",
-	"tsserver",
 	"sumneko_lua",
 	"gopls",
 	"tailwindcss",
@@ -190,5 +189,21 @@ require("lspconfig").emmet_ls.setup({
 		"heex",
 		"eex",
 		"elixir",
+	},
+})
+
+require("luasnip.loaders.from_vscode").lazy_load({
+	paths = { "./lua/config/lua_snip" },
+})
+
+--tsnvim
+require("typescript").setup({
+	disable_commands = false, -- prevent the plugin from creating Vim commands
+	debug = false, -- enable debug logging for commands
+	go_to_source_definition = {
+		fallback = true, -- fall back to standard LSP definition on failure
+	},
+	server = { -- pass options to lspconfig's setup method
+		on_attach = ...,
 	},
 })

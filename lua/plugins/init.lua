@@ -44,4 +44,5 @@ return {
 			{ "<leader>gg", "<cmd>LazyGit<CR>", { desc = "open lazy git" } },
 		},
 	},
+	"jose-elias-alvarez/typescript.nvim",
 }
