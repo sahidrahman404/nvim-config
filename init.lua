@@ -29,7 +29,7 @@ local servers = {
 	"clangd",
 	"rust_analyzer",
 	"pyright",
-	"sumneko_lua",
+	"lua_ls",
 	"gopls",
 	"tailwindcss",
 	"sqlls",
@@ -133,7 +133,7 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
