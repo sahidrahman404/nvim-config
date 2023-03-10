@@ -38,7 +38,7 @@ return {
 
 			-- Change specific vim highlight groups
 			highlight_groups = {
-				ColorColumn = { bg = "rose" },
+				ColorColumn = { bg = "#FECACA" },
 			},
 		})
 
