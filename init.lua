@@ -31,8 +31,8 @@ local servers = {
 	"pyright",
 	"lua_ls",
 	"gopls",
-	"tailwindcss",
 	"sqlls",
+	"tailwindcss",
 	"cssls",
 	"html",
 	"jsonls",
@@ -175,6 +175,50 @@ require("lspconfig").jsonls.setup({
 	capabilities = capabilities,
 })
 
+--tailwind
+require("lspconfig").tailwindcss.setup({
+	capabilities = capabilities,
+	init_options = {
+		userLanguages = {
+			elixir = "phoenix-heex",
+			heex = "phoenix-heex",
+		},
+	},
+	settings = {
+		-- https://github.com/tailwindlabs/tailwindcss-intellisense/tree/6b3e598e5378812b42db8a208db4980c82b60a10/packages/vscode-tailwindcss#tailwindcssincludelanguages
+		includeLanguages = {
+			["html-eex"] = "html",
+			["phoenix-heex"] = "html",
+			eelixir = "html",
+			heex = "html",
+		},
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+					[[class= "([^"]*)]],
+					[[class: "([^"]*)]],
+					'~H""".*class="([^"]*)".*"""',
+				},
+			},
+			validate = true,
+		},
+	},
+	filetypes = {
+		"html",
+		"typescriptreact",
+		"javascriptreact",
+		"css",
+		"sass",
+		"scss",
+		"less",
+		"eruby",
+		"html-eex",
+		"heex",
+		"eex",
+		"elixir",
+	},
+})
+
 --emmet
 require("lspconfig").emmet_ls.setup({
 	filetypes = {
@@ -186,6 +230,7 @@ require("lspconfig").emmet_ls.setup({
 		"scss",
 		"less",
 		"eruby",
+		"html-eex",
 		"heex",
 		"eex",
 		"elixir",
