@@ -25,6 +25,8 @@ return {
 				null_ls.builtins.completion.spell,
 				null_ls.builtins.formatting.sql_formatter,
 				null_ls.builtins.code_actions.eslint,
+				null_ls.builtins.diagnostics.golangci_lint,
+				null_ls.builtins.formatting.golines,
 				require("typescript.extensions.null-ls.code-actions"),
 			},
 			-- add to your shared on_attach callback
