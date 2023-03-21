@@ -168,6 +168,10 @@ require("lspconfig").cssls.setup({
 --html
 require("lspconfig").html.setup({
 	capabilities = capabilities,
+	filetypes = {
+		"html",
+		"template",
+	},
 })
 
 --json
@@ -217,6 +221,7 @@ require("lspconfig").tailwindcss.setup({
 		"heex",
 		"eex",
 		"elixir",
+		"template",
 	},
 })
 
@@ -235,6 +240,7 @@ require("lspconfig").emmet_ls.setup({
 		"heex",
 		"eex",
 		"elixir",
+		"template",
 	},
 })
 
