@@ -35,6 +35,7 @@ return {
 				"erlang",
 				"heex",
 				"surface",
+				"sql",
 			},
 
 			highlight = { enable = true },
