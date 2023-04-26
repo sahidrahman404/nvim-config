@@ -2,6 +2,7 @@ return {
 	"rose-pine/neovim",
 	config = function()
 		require("rose-pine").setup({
+			variant = "auto",
 			--- @usage 'main' | 'moon'
 			dark_variant = "main",
 			bold_vert_split = false,
