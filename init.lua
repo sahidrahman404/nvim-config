@@ -205,6 +205,9 @@ require("lspconfig").tailwindcss.setup({
 					'~H""".*class="([^"]*)".*"""',
 				},
 			},
+			classAttributes = {
+				".*Classes",
+			},
 			validate = true,
 		},
 	},
