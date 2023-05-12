@@ -200,12 +200,16 @@ require("lspconfig").tailwindcss.setup({
 		tailwindCSS = {
 			experimental = {
 				classRegex = {
-					[[class= "([^"]*)]],
-					[[class: "([^"]*)]],
-					'~H""".*class="([^"]*)".*"""',
+					-- [[class= "([^"]*)]],
+					-- [[class: "([^"]*)]],
+					-- '~H""".*class="([^"]*)".*"""',
+					{ "cx\\(([^)]*)\\)", "(?:\"|'|`)([^(?:\"|'|`)]*)(?:\"|'|`)" },
 				},
 			},
 			classAttributes = {
+				"class",
+				"className",
+				"ngClass",
 				".*Classes",
 			},
 			validate = true,
@@ -254,11 +258,11 @@ require("luasnip.loaders.from_vscode").lazy_load({
 --tsnvim
 require("typescript").setup({
 	disable_commands = false, -- prevent the plugin from creating Vim commands
-	debug = false, -- enable debug logging for commands
+	debug = false,         -- enable debug logging for commands
 	go_to_source_definition = {
-		fallback = true, -- fall back to standard LSP definition on failure
+		fallback = true,   -- fall back to standard LSP definition on failure
 	},
-	server = { -- pass options to lspconfig's setup method
+	server = {             -- pass options to lspconfig's setup method
 		on_attach = on_attach,
 	},
 })
