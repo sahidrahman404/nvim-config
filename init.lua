@@ -40,6 +40,7 @@ local servers = {
 	"dockerls",
 	"emmet_ls",
 	"elixirls",
+	"zls"
 }
 
 -- Ensure the servers above are installed
