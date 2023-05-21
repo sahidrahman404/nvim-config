@@ -36,7 +36,6 @@ local servers = {
 	"cssls",
 	"html",
 	"jsonls",
-	"yamlls",
 	"taplo",
 	"dockerls",
 	"emmet_ls",

@@ -26,7 +26,8 @@ return {
 		end,
 	},
 	"williamboman/mason-lspconfig.nvim",
-	{ -- Additional text objects via treesitter
+	{
+	-- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter",
 	},
@@ -45,4 +46,13 @@ return {
 		},
 	},
 	"jose-elias-alvarez/typescript.nvim",
+	-- {
+	-- 	'Equilibris/nx.nvim',
+	-- 	dependencies = {
+	-- 		'nvim-telescope/telescope.nvim',
+	-- 	},
+	-- 	config = function()
+	-- 		require("nx").setup {}
+	-- 	end
+	-- }
 }
