@@ -25,6 +25,7 @@ return {
 				"gitignore",
 				"json",
 				"toml",
+				"hcl",
 				"yaml",
 				"javascript",
 				"prisma",
