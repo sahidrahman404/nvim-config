@@ -41,7 +41,9 @@ local servers = {
 	"emmet_ls",
 	"elixirls",
 	"zls",
-	"terraformls"
+	"terraformls",
+	"graphql",
+	"svelte",
 }
 
 -- Ensure the servers above are installed

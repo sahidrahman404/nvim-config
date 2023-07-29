@@ -27,7 +27,7 @@ return {
 	},
 	"williamboman/mason-lspconfig.nvim",
 	{
-	-- Additional text objects via treesitter
+		-- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter",
 	},
@@ -46,6 +46,14 @@ return {
 		},
 	},
 	"jose-elias-alvarez/typescript.nvim",
+	{
+		"cuducos/yaml.nvim",
+		ft = { "yaml" }, -- optional
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+	}
 	-- {
 	-- 	'Equilibris/nx.nvim',
 	-- 	dependencies = {
