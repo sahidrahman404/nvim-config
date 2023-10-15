@@ -13,6 +13,7 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
+		tag = "legacy",
 		config = function()
 			-- Turn on lsp status information
 			require("fidget").setup()

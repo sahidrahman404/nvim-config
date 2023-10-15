@@ -43,7 +43,6 @@ local servers = {
 	"zls",
 	"terraformls",
 	"graphql",
-	"svelte",
 }
 
 -- Ensure the servers above are installed
